@@ -182,9 +182,18 @@ public enum DbType {
      * TDengine
      */
     TDENGINE("TDengine", "TDengine数据库"),
+    /**
+     * Informix
+     */
+    INFORMIX("informix", "Informix数据库"),
 
     /**
-     * UNKONWN DB
+     * uxdb
+     */
+    UXDB("uxdb", "优炫数据库"),
+
+    /**
+     * UNKNOWN DB
      */
     OTHER("other", "其他数据库");
 

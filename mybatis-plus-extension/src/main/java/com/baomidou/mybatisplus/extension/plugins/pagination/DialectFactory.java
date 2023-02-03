@@ -69,7 +69,8 @@ public class DialectFactory {
                 || dbType == DbType.VERTICA
                 || dbType == DbType.REDSHIFT
                 || dbType == DbType.OPENGAUSS
-                || dbType == DbType.TDENGINE) {
+                || dbType == DbType.TDENGINE
+                || dbType == DbType.UXDB) {
                 dialect = new PostgreDialect();
             }
             // other types
@@ -95,6 +96,8 @@ public class DialectFactory {
                 || dbType == DbType.GBASEDBT
                 || dbType == DbType.GBASE_INFORMIX) {
                 dialect = new GBase8sDialect();
+            }else if(dbType==DbType.INFORMIX){
+                dialect = new InformixDialect();
             }
             DIALECT_ENUM_MAP.put(dbType, dialect);
         }

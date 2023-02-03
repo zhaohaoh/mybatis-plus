@@ -129,8 +129,12 @@ public class JdbcUtils {
             return DbType.REDSHIFT;
         } else if (url.contains(":opengauss:")) {
             return DbType.OPENGAUSS;
-        } else if (url.contains(":TAOS:")) {
+        } else if (url.contains(":taos:") || url.contains(":taos-rs:")) {
             return DbType.TDENGINE;
+        } else if (url.contains(":informix")) {
+            return DbType.INFORMIX;
+        } else if (url.contains(":uxdb:")) {
+            return DbType.UXDB;
         } else {
             logger.warn("The jdbcUrl is " + jdbcUrl + ", Mybatis Plus Cannot Read Database type or The Database's Not Supported!");
             return DbType.OTHER;
